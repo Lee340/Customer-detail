@@ -13,7 +13,7 @@ public class CustomerDetail {
 
 	private int customerId;
 	private String shareName;
-	private int quatity;
+	private int quantity;
 	private double unitPrice;
 	private double totalValuation;
 	private String shareType;

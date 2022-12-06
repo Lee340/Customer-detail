@@ -30,7 +30,8 @@ public class CustomerDetailServiceImpl implements CustomerDetailService {
 			Share share = restTemplate.getForObject("http://localhost:8082/shares/"+customer.getShareId(), Share.class);
 			
 			// creating movie rating object
-			CustomerDetail customerDetail = new CustomerDetail(customer.getCustomerId(), share.getShareName(), customer.getQuantity(), share.getMarketPrice(), share.getMarketPrice()*customer.getQuantity(), customer.getShareType());
+			double totalValuation = share.getMarketPrice() * customer.getQuantity();
+			CustomerDetail customerDetail = new CustomerDetail(customer.getCustomerId(), share.getShareName(), customer.getQuantity(), share.getMarketPrice(), totalValuation, customer.getShareType());
 			
 			//adding movie rating object in list
 			customerDetailList.add(customerDetail);
